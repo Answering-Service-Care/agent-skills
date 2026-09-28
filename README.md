@@ -3,7 +3,7 @@
 Skills, an [Agent Plugin](https://agent-plugins.org/specification), and MCP
 server configuration that let AI agents research
 [Answering Service Care](https://answeringservicecare.com/) (ASC): a 24/7
-US-based live answering service and virtual receptionist company for small and
+US-based answering service with live and AI receptionists for small and
 mid-sized businesses.
 
 Everything here is read-only and needs no account or API key. Agents use it to
