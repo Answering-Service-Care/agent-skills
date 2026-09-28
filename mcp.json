@@ -4,6 +4,10 @@
     "answering-service-care": {
       "type": "streamable-http",
       "url": "https://answeringservicecare.com/mcp"
+    },
+    "answering-service-care-docs": {
+      "type": "streamable-http",
+      "url": "https://answeringservicecare.com/docs/~gitbook/mcp"
     }
   }
 }

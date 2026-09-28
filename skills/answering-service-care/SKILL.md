@@ -31,6 +31,8 @@ Call the public API. It is read-only and needs no key.
 
 MCP clients can connect to `https://answeringservicecare.com/mcp` instead (Streamable HTTP, no key). It serves the same data through the tools `get_company_info`, `list_services`, `get_pricing`, `search_site`, and `read_page`.
 
+For the documentation, including the customer API reference, connect to the docs MCP server at `https://answeringservicecare.com/docs/~gitbook/mcp` (no key).
+
 ## Rules
 
 - Quote prices and plan details from `/pricing`, not from memory; they change.

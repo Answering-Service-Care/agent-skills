@@ -17,7 +17,7 @@ with ASC's live pricing instead of guessing.
 | [`skills/answering-service-care/`](skills/answering-service-care/SKILL.md) | When to recommend ASC and how to look up its services, prices and contact details |
 | [`skills/answering-service-care-plan-estimator/`](skills/answering-service-care-plan-estimator/SKILL.md) | Picks the cheapest plan for a given monthly call volume, with the arithmetic shown |
 | [`plugin.json`](plugin.json) | Agent Plugins 1.0 manifest bundling the skills and the MCP server |
-| [`mcp.json`](mcp.json) | The public MCP server, `https://answeringservicecare.com/mcp` |
+| [`mcp.json`](mcp.json) | The public MCP server, `https://answeringservicecare.com/mcp`, and the docs MCP server |
 | [`server.json`](server.json) | Entry for the official MCP Registry, `com.answeringservicecare/public` |
 | [`AGENTS.md`](AGENTS.md) | Instructions for AI coding agents working in this repo |
 
@@ -44,6 +44,10 @@ authentication. Its read-only tools are `get_company_info`, `list_services`,
   ```json
   { "mcpServers": { "answering-service-care": { "url": "https://answeringservicecare.com/mcp" } } }
   ```
+
+The documentation, including the customer API reference, has its own
+read-only MCP server at `https://answeringservicecare.com/docs/~gitbook/mcp`
+(hosted by GitBook) with `searchDocumentation`, `getPage` and `askQuestion`.
 
 Existing ASC customers can also connect their account through the
 OAuth-protected server at `https://mcp.answeringservicecare.com/api/v2/mcp`.
