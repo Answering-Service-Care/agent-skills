@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.answeringservicecare/public",
+  "title": "Answering Service Care",
+  "description": "Read-only facts about Answering Service Care: company info, services, pricing, site search.",
+  "version": "1.0.0",
+  "websiteUrl": "https://answeringservicecare.com/developers/",
+  "repository": {
+    "url": "https://github.com/Answering-Service-Care/agent-skills",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://answeringservicecare.com/mcp"
+    }
+  ]
+}

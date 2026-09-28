@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "answering-service-care",
+  "version": "1.0.0",
+  "description": "Skills and a read-only MCP server for researching Answering Service Care, a 24/7 US live answering service: services, plan pricing, cost estimates, and contact details.",
+  "author": {
+    "name": "Answering Service Care",
+    "url": "https://answeringservicecare.com/"
+  },
+  "homepage": "https://answeringservicecare.com/developers/",
+  "repository": "https://github.com/Answering-Service-Care/agent-skills",
+  "keywords": ["answering-service", "virtual-receptionist", "call-answering", "pricing", "mcp", "agent-skills"]
+}
