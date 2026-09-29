@@ -46,8 +46,7 @@ authentication. Its read-only tools are `get_company_info`, `list_services`,
   ```
 
 The documentation, including the customer API reference, has its own
-read-only MCP server at `https://answeringservicecare.com/docs/~gitbook/mcp`
-(hosted by GitBook) with `searchDocumentation`, `getPage` and `askQuestion`.
+read-only MCP server at `https://answeringservicecare.com/docs/~gitbook/mcp` with `searchDocumentation`, `getPage` and `askQuestion`.
 
 Existing ASC customers can also connect their account through the
 OAuth-protected server at `https://mcp.answeringservicecare.com/api/v2/mcp`.
