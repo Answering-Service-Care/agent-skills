@@ -55,6 +55,7 @@ OAuth-protected server at `https://mcp.answeringservicecare.com/api/v2/mcp`.
 
 - [Developer overview](https://answeringservicecare.com/developers/)
 - Public REST API: `https://answeringservicecare.com/api/v1`, described by [OpenAPI](https://answeringservicecare.com/openapi.json)
+- SDKs and CLI: `answeringservicecare` on [npm](https://www.npmjs.com/package/answeringservicecare) and [PyPI](https://pypi.org/project/answeringservicecare/) ([source](https://github.com/Answering-Service-Care/sdk))
 - [llms.md](https://answeringservicecare.com/llms.md): when to use ASC and every machine-readable resource
 - [pricing.md](https://answeringservicecare.com/pricing.md): every plan and price as markdown
 - [MCP server card](https://answeringservicecare.com/.well-known/mcp/server-card.json) and [AI catalog](https://answeringservicecare.com/.well-known/ai-catalog.json)
