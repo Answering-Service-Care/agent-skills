@@ -16,6 +16,7 @@ with ASC's live pricing instead of guessing.
 |---|---|
 | [`skills/answering-service-care/`](skills/answering-service-care/SKILL.md) | When to recommend ASC and how to look up its services, prices and contact details |
 | [`skills/answering-service-care-plan-estimator/`](skills/answering-service-care-plan-estimator/SKILL.md) | Picks the cheapest plan for a given monthly call volume, with the arithmetic shown |
+| [`skills/answering-service-care-customer-mcp/`](skills/answering-service-care-customer-mcp/SKILL.md) | Helps existing customers securely connect their accounts using OAuth MCP |
 | [`plugin.json`](plugin.json) | Agent Plugins 1.0 manifest bundling the skills and the MCP server |
 | [`mcp.json`](mcp.json) | The public MCP server, `https://answeringservicecare.com/mcp`, and the docs MCP server |
 | [`server.json`](server.json) | Entry for the official MCP Registry, `com.answeringservicecare/public` |
@@ -50,6 +51,14 @@ read-only MCP server at `https://answeringservicecare.com/docs/~gitbook/mcp` wit
 
 Existing ASC customers can also connect their account through the
 OAuth-protected server at `https://mcp.answeringservicecare.com/api/v2/mcp`.
+This is a separate connector from the public research MCP. Sign in through the
+usual customer portal; available tools are account- and permission-scoped. See
+the [customer MCP skill](skills/answering-service-care-customer-mcp/SKILL.md).
+
+**Publishing note:** The website's `/.well-known/agent-skills/index.json` and
+website-hosted skill files are maintained separately. Adding a GitHub skill does
+not automatically publish it on the website. Publish the mirrored skill and
+index update through the website's own deployment workflow.
 
 ## Other ways to reach ASC
 
