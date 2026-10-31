@@ -4,7 +4,7 @@ Instructions for AI coding agents working in this repository.
 
 ## What this repo is
 
-Public, distributable agent material for Answering Service Care (ASC): two
+Public, distributable agent material for Answering Service Care (ASC):
 Agent Skills, an Agent Plugins 1.0 manifest, the MCP client config for ASC's
 public MCP server, and that server's MCP Registry entry. It contains no
 application code. The MCP server itself runs as a Cloudflare Worker whose
@@ -17,8 +17,9 @@ source is private; its tools are listed in the README.
   at most 64 characters), and `description` must say when to use the skill in
   at most 1024 characters.
 - `plugin.json`: Agent Plugins manifest. Only `$schema` and `name` are
-  required; the schema allows no other top-level fields than those in
-  https://agent-plugins.org/schemas/1.0.0/plugin.schema.json.
+  required, but `version`, `description`, `author`, `homepage`,
+  `repository`, `license`, `keywords`, and `extensions` are also allowed.
+  Validate against https://agent-plugins.org/schemas/1.0.0/plugin.schema.json.
 - `mcp.json`: MCP servers for the plugin. Server config must live here, never
   inline in `plugin.json`.
 - `server.json`: MCP Registry entry. `description` is limited to 100
@@ -31,9 +32,12 @@ source is private; its tools are listed in the README.
 - Keep facts out of the skills. Prices, plans and contact details change, so
   skills tell agents to call the API (`/api/v1/*`) or MCP tools rather than
   quoting numbers.
-- The site serves the same two skills at
-  https://answeringservicecare.com/.well-known/agent-skills/index.json. When you
-  change a skill here, the copy in the website's theme needs the same change.
+- The site publishes its skill index at
+  https://answeringservicecare.com/.well-known/agent-skills/index.json.
+  The website theme maintains separate copies of skill definitions. When a
+  skill changes here, mirror that change in the theme; when a skill is added,
+  add it to the theme and its index as a separate website deployment step.
+  Publishing this repository alone does not update the website index.
 - When the MCP server's version changes, bump `version` in `server.json` and
   `plugin.json` together, then republish with `mcp-publisher publish`.
 - Every URL must point at `https://answeringservicecare.com`, never a staging
