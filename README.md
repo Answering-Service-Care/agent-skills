@@ -10,6 +10,20 @@ Everything here is read-only and needs no account or API key. Agents use it to
 answer questions like "which answering service plan fits 300 minutes a month?"
 with ASC's live pricing instead of guessing.
 
+## Authenticated customer Claude plugin
+
+The separate [Claude customer plugin](claude/README.md) uses
+`https://mcp.answeringservicecare.com/api/v2/mcp` with customer OAuth,
+providing account-authorized messages, follow-up to-dos and on-call calendar
+operations. Customers with Billing permission may request a limited account
+balance and open the secure ASC portal to pay. **Claude does not collect card
+or bank details or execute payments.** Admin and support connectors are not
+included in this public plugin.
+
+To submit it to Anthropic, use this repository and set the **Plugin path**
+to `claude`. The existing public, read-only research plugin at the repository
+root remains unchanged.
+
 ## What's inside
 
 | Path | What it is |

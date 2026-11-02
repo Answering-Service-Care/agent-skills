@@ -1,0 +1,18 @@
+{
+  "name": "answering-service-care",
+  "version": "1.0.0",
+  "description": "Securely connect Claude to your Answering Service Care customer account to review messages and authorized on-call schedules, manage follow-up to-dos and check balances with a secure payment-portal handoff.",
+  "author": {
+    "name": "Answering Service Care",
+    "url": "https://www.answeringservicecare.com"
+  },
+  "homepage": "https://mcp.answeringservicecare.com",
+  "license": "MIT",
+  "keywords": [
+    "answering-service",
+    "messages",
+    "on-call",
+    "scheduling",
+    "mcp"
+  ]
+}
