@@ -22,6 +22,10 @@ source is private; its tools are listed in the README.
   Validate against https://agent-plugins.org/schemas/1.0.0/plugin.schema.json.
 - `mcp.json`: MCP servers for the plugin. Server config must live here, never
   inline in `plugin.json`.
+- `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`: the
+  same plugin for Claude, and the marketplace that lets people install it from
+  this repository. `.mcp.json` holds the same MCP servers in Claude's format
+  (`"type": "http"`).
 - `server.json`: MCP Registry entry. `description` is limited to 100
   characters, and `name` must stay under the `com.answeringservicecare/`
   namespace, which the registry verifies through a DNS record on
@@ -38,8 +42,11 @@ source is private; its tools are listed in the README.
   skill changes here, mirror that change in the theme; when a skill is added,
   add it to the theme and its index as a separate website deployment step.
   Publishing this repository alone does not update the website index.
-- When the MCP server's version changes, bump `version` in `server.json` and
-  `plugin.json` together, then republish with `mcp-publisher publish`.
+- When the MCP server's version changes, bump `version` in `server.json`,
+  `plugin.json`, `.claude-plugin/plugin.json` and
+  `.claude-plugin/marketplace.json` together, then republish with
+  `mcp-publisher publish`.
+- Keep `mcp.json` and `.mcp.json` listing the same servers and URLs.
 - Every URL must point at `https://answeringservicecare.com`, never a staging
   host.
 - Never commit keys. The MCP Registry signing key stays with whoever publishes.
@@ -53,6 +60,13 @@ curl -s -o /tmp/plugin.schema.json https://agent-plugins.org/schemas/1.0.0/plugi
 curl -s -o /tmp/mcp.schema.json https://agent-plugins.org/schemas/1.0.0/mcp.schema.json
 npx ajv-cli@5 validate --spec=draft2020 -s /tmp/plugin.schema.json -d plugin.json
 npx ajv-cli@5 validate --spec=draft2020 -s /tmp/mcp.schema.json -d mcp.json
+```
+
+Check the Claude plugin and its marketplace with Claude Code:
+
+```bash
+claude plugin validate --strict .
+claude plugin validate --strict .claude-plugin/plugin.json
 ```
 
 `mcp-publisher publish` validates `server.json` against the registry schema

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "answering-service-care-research": {
+      "type": "http",
+      "url": "https://answeringservicecare.com/mcp"
+    },
+    "answering-service-care-docs": {
+      "type": "http",
+      "url": "https://answeringservicecare.com/docs/~gitbook/mcp"
+    }
+  }
+}

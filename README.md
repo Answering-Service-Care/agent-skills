@@ -19,10 +19,34 @@ with ASC's live pricing instead of guessing.
 | [`skills/answering-service-care-customer-mcp/`](skills/answering-service-care-customer-mcp/SKILL.md) | Helps existing customers securely connect their accounts using OAuth MCP |
 | [`plugin.json`](plugin.json) | Agent Plugins 1.0 manifest, `answering-service-care-research`, bundling the skills and the MCP server |
 | [`mcp.json`](mcp.json) | The public MCP server, `https://answeringservicecare.com/mcp`, and the docs MCP server |
+| [`.claude-plugin/`](.claude-plugin/) | The same plugin for Claude: its manifest and the marketplace that lists it |
+| [`.mcp.json`](.mcp.json) | The same two MCP servers, in Claude's format |
 | [`server.json`](server.json) | Entry for the official MCP Registry, `com.answeringservicecare/public` |
 | [`AGENTS.md`](AGENTS.md) | Instructions for AI coding agents working in this repo |
 
-## Install the skills
+## Install the plugin in Claude
+
+The plugin bundles the three skills and both MCP servers. Neither server needs
+an account.
+
+**Claude Code 2.1.275 or later:**
+
+```
+/plugin install answering-service-care-research --marketplace Answering-Service-Care/agent-skills
+```
+
+**Older Claude Code:** add the marketplace first.
+
+```
+/plugin marketplace add Answering-Service-Care/agent-skills
+/plugin install answering-service-care-research@answering-service-care-research
+```
+
+**A whole Claude Team or Enterprise organization:** an owner opens
+**Organization settings > Plugins & skills** and adds this repository,
+`Answering-Service-Care/agent-skills`.
+
+## Install just the skills
 
 ```bash
 npx skills add Answering-Service-Care/agent-skills
