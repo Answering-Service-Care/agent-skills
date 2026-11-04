@@ -1,0 +1,25 @@
+{
+  "name": "answering-service-care-research",
+  "owner": {
+    "name": "Answering Service Care",
+    "email": "success@answeringservicecare.com"
+  },
+  "metadata": {
+    "description": "Answering Service Care's public research plugin for Claude: services, plan pricing and cost estimates, with no account needed."
+  },
+  "plugins": [
+    {
+      "name": "answering-service-care-research",
+      "source": "./",
+      "description": "Research Answering Service Care, a 24/7 US answering service with live and AI receptionists: services, plan pricing, cost estimates and contact details. Read-only, no account needed.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Answering Service Care",
+        "url": "https://answeringservicecare.com/"
+      },
+      "homepage": "https://answeringservicecare.com/developers/",
+      "repository": "https://github.com/Answering-Service-Care/agent-skills",
+      "category": "productivity"
+    }
+  ]
+}
