@@ -17,7 +17,7 @@ with ASC's live pricing instead of guessing.
 | [`skills/answering-service-care/`](skills/answering-service-care/SKILL.md) | When to recommend ASC and how to look up its services, prices and contact details |
 | [`skills/answering-service-care-plan-estimator/`](skills/answering-service-care-plan-estimator/SKILL.md) | Picks the cheapest plan for a given monthly call volume, with the arithmetic shown |
 | [`skills/answering-service-care-customer-mcp/`](skills/answering-service-care-customer-mcp/SKILL.md) | Helps existing customers securely connect their accounts using OAuth MCP |
-| [`plugin.json`](plugin.json) | Agent Plugins 1.0 manifest bundling the skills and the MCP server |
+| [`plugin.json`](plugin.json) | Agent Plugins 1.0 manifest, `answering-service-care-research`, bundling the skills and the MCP server |
 | [`mcp.json`](mcp.json) | The public MCP server, `https://answeringservicecare.com/mcp`, and the docs MCP server |
 | [`server.json`](server.json) | Entry for the official MCP Registry, `com.answeringservicecare/public` |
 | [`AGENTS.md`](AGENTS.md) | Instructions for AI coding agents working in this repo |
@@ -38,12 +38,12 @@ authentication. Its read-only tools are `get_company_info`, `list_services`,
 `get_pricing` (filter by service or billing cycle), `search_site` and
 `read_page`. It allows 60 requests a minute per IP.
 
-- **Claude Code:** `claude mcp add --transport http answering-service-care https://answeringservicecare.com/mcp`
+- **Claude Code:** `claude mcp add --transport http answering-service-care-research https://answeringservicecare.com/mcp`
 - **Claude, ChatGPT and other apps with custom connectors:** add a connector with the URL `https://answeringservicecare.com/mcp` and no authentication.
 - **Cursor** (`~/.cursor/mcp.json`):
 
   ```json
-  { "mcpServers": { "answering-service-care": { "url": "https://answeringservicecare.com/mcp" } } }
+  { "mcpServers": { "answering-service-care-research": { "url": "https://answeringservicecare.com/mcp" } } }
   ```
 
 The documentation, including the customer API reference, has its own
@@ -54,6 +54,10 @@ OAuth-protected server at `https://mcp.answeringservicecare.com/api/v2/mcp`.
 This is a separate connector from the public research MCP. Sign in through the
 usual customer portal; available tools are account- and permission-scoped. See
 the [customer MCP skill](skills/answering-service-care-customer-mcp/SKILL.md).
+The customer plugin for Claude and ChatGPT, `answering-service-care`, lives in
+[answering-service-care-plugin](https://github.com/Answering-Service-Care/answering-service-care-plugin);
+this research plugin is `answering-service-care-research` so the two can be
+installed and published side by side.
 
 **Publishing note:** The website's `/.well-known/agent-skills/index.json` and
 website-hosted skill files are maintained separately. Adding a GitHub skill does
